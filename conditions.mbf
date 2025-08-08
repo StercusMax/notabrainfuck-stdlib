@@ -1,4 +1,4 @@
-#IN CONDITIONS_MBF
+#IN CONDITIONS_MBF :
 	#D CONDITIONS_MBF#
 	; |cpycell|n|ret|0|0 (requires 2 cells after ret)
 	#D IF(n) :
