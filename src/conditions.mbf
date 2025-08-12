@@ -1,0 +1,84 @@
+#IN _CONDITIONS_MBF :
+#D _CONDITIONS_MBF#
+; conditions.mbf contains macros about condition handling
+
+; |cpycell|n|ret|0|0
+#D IF(n) :
+	>>+<
+	[>>]
+	>
+	[->>]
+	<<<<
+#
+
+; |cpycell|n|ret
+#D IFN(n) :
+	>>+<
+	[>-]
+	<[<]
+#
+
+#D _COMPPROLOGUE:
+	>>>>>+<<<<
+	[<+>- >>+<<] < [->+<] >
+	>
+	[	<<+>>-
+		>
+		[->]
+		>>
+		[<]
+		>
+		[>>>] ;if it's positive the current cell eq 0
+		<<<<<
+	]
+#
+
+#D _COMPEPILOGUE: <-<<<<< [->>+<<]#
+
+
+;Theses macros handle positive numbers only
+
+; |cpycell|n|n2|ret|0|0->1|0|0|0
+#D IFEQ(n, n2) :
+	#$_COMPPROLOGUE#
+	>>[<<+>] ;if current cell is ret
+	< ;ret cell
+	[[-]>]
+	>>
+	[<<+>>>]
+	#$_COMPEPILOGUE#
+#
+
+; |cpycell|n|n2|ret|0|0->1|0|0|0
+#D IFNEQ(n, n2) :
+	#$_COMPPROLOGUE#
+	>>[<<+>] ;if current cell is ret
+	< ;ret cell
+	[[-]+>]
+	>>
+	[>]
+	#$_COMPEPILOGUE#
+#
+
+; |cpycell|n|n2|ret|0|0->1|0|0|0
+#D IFSUP(n, n2) :
+	#$_COMPPROLOGUE#
+	>>[<] ;if current cell is ret
+	< ;ret cell
+	[[-]+>]
+	>>
+	[>]
+	#$_COMPEPILOGUE#
+#
+
+; |cpycell|n|n2|ret|0|0->1|0|0|0
+#D IFINF(n, n2) :
+	#$_COMPPROLOGUE#
+	>>>[<<+>>>] ;if current cell is n2
+	<<< ;ret cell
+	[[-]>]
+	>>
+	[<<+>>>]
+	#$_COMPEPILOGUE#
+#
+#

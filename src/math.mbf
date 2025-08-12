@@ -1,0 +1,47 @@
+#IN _MATH_MBF :
+#D _MATH_MBF#
+;Doesn't check overflow
+;	|cpycell|n|n2|ret
+#D ADD(n, n2) :
+	>[-<+>>>+<<]
+	<[->+<]
+	>>[-<<+>>>+<]
+	<<[->>+<<]
+#
+
+;Doesn't check underflow
+;	|cpycell|n|n2|ret
+#D SUB(n, n2) :
+	>[-<+>>>+<<]
+	<[->+<]
+	>>[-<<+>>>-<]
+	<<[->>+<<]
+#
+
+;Doesn't check overflow
+;	|cpycell|n|n2|ret|0
+#D MUL(n, n2) :
+	>>[
+	->>+<<
+	<[-<+>>>+<<]
+	<[->+<]
+	>>
+	]
+	>>[-<<+>>]
+	<<<<
+#
+
+;	|cpycell|n|n2|ret (euclidian result)|ret2 (mod)
+#D DIV(n,n2) :
+	
+#
+
+
+;only works if current implementation supports signed number, does nothing if n == 0
+
+; |cpycell|n|ret
+#D INVERTSIGN+(n) : >[<+>->-<] <[->+<]#
+
+; |cpycell|n|ret
+#D INVERTSIGN-(-n) : >[<->+>+<] <[+>-<]#
+#

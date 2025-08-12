@@ -1,0 +1,9 @@
+#IN _STRINGS_MBF:
+#D _STRINGS_MBF#
+
+;supposes we are in the end of the string (null terminator)
+#D BEGINSTRING : <[<]#
+
+;supposes we are in the beginning of the string (zero before str)
+#D ENDINGSTRING : >[>]#
+#

@@ -1,0 +1,42 @@
+#IN _IO_MBF :
+#D _IO_MBF#
+
+;Needs to start at the beginning of string - 1 (so first null) and supposes there are 0 between the string 
+#D PRINT : >[.>]#
+
+;Read n chars and return them
+
+;|cpycell|n|0|ret|0 where ret is the n required chars
+#D READ(n) :
+	>[
+		-<+>
+		>>[>] ;go to the end of string
+		,
+		[<] 
+		< ;go to n
+	]
+	<[->+<]
+#
+
+;|cpycell|1|0|ret|0 where ret is the chars before the line jump
+#D READLN :
+	#%src/conditions.mbf#
+	>+[
+		>>[>] ;go to the end of string
+		,
+		>
+		++++++++++
+		>
+		#$IFEQ(<<, <)#
+		>>>[-<<<<[<]<->>[>]>>>]
+		<
+		[-]
+		<
+		[-]
+		<<[-]<
+		[<] 
+		< ;go to 2
+	]
+	<[->+<]
+#
+#
