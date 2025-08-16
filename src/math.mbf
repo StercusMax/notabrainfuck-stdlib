@@ -34,8 +34,9 @@
 ;	|cpycell|n|n2|ret (euclidian result)|ret2 (mod)|ncpy|n2cpy|0|1|0|0
 ; Does nothing if n or n2 equals to 0
 #D DIVMOD(n,n2) :
+	>>
 	[
-		>>>>>>>>+<<<<<<
+		>>>>>>+<<<<<<
 		<[-<+>>>>>+<<<<]
 		<[->+<]
 		>>>>>
