@@ -1,4 +1,4 @@
-*#IN _MATH_MBF :
+#IN _MATH_MBF :
 #D _MATH_MBF#
 ;Doesn't check overflow
 ;	|cpycell|n|n2|ret
