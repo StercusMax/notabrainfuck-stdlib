@@ -33,7 +33,7 @@ READLN Behaviour: takes no argument, return a string entered by the user until a
 ADD(n, n2) Behaviour: takes n and n2 and returns their sum. Size : 0
 SUB(n, n2) Behaviour: takes n and n2 and returns their difference. Size : 0
 MUL(n, n2) Behaviour: takes n and n2 and returns their product. Size : 1
-DIVMOD(n, n2) Behaviour: divides n by n2 and returns euclidian result and rest (in two different cells). Doesn't verify if n or n2 equals to 0 Size : 6
+DIVMOD(n, n2) Behaviour: divides n by n2 and returns euclidian result and rest (in two different cells). Doesn't verify if n2 equals to 0 Size : 6
 
 INVERTSIGN+(n) Behaviour: returns the opposite of n where n is positive. Size : 0
 INVERTSIGN-(-n) Behaviour: returns the opposite of n where n is negative. Size : 0

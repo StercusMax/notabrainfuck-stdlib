@@ -32,7 +32,7 @@
 #
 
 ;	|cpycell|n|n2|ret (euclidian result)|ret2 (mod)|ncpy|n2cpy|0|1|0|0
-; Does not verify if n or n2 equals to 0 (you should verify it yourself)
+; Does not verify if n2 equals to 0 (you should verify it yourself)
 #D DIVMOD(n,n2) :
 	>>>>>>>>+<<<<<<
 	<[-<+>>>>>+<<<<]
