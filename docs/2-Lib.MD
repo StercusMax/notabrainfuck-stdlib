@@ -45,3 +45,5 @@ INVERTSIGN-(-n) Behaviour: returns the opposite of n where n is negative. Size :
 BEGINSTRING Behaviour : takes no argument, supposes we are in the null terminator and brings to the null before the string
 ENDINGSTRING Behaviour : takes no argument, supposes we are in the null cell before the string and brings to the null terminator
 ```
+
+Infos about memory layout are included in src folder
